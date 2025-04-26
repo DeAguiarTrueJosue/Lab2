@@ -20,11 +20,10 @@ int CountDigits(int number) {
 
 int GetReverseNumber(int number) {
 	int reverseNumber = 0;
-	int iterations = CountDigits(number) - 1;
-	while (iterations >= 0) {
-		reverseNumber += number % 10 * Pow(10, iterations);
+	while (number > 0) {
+		reverseNumber *= 10;
+		reverseNumber += number % 10;
 		number /= 10;
-		iterations--;
 	}
 	return reverseNumber;
 }
@@ -67,7 +66,7 @@ int main() {
 
 	printf("\n");
 
-	for (int i = 1; i < 1000000000; i++)
+	for (int i = 1; i < 10000; i++)
 	{
 		if (IsArmstrongNumber(i) == 1) {
 			printf("%i is an Armstrong Number\n", i);
