@@ -5,17 +5,23 @@ int main() {
 
 	int height = 9;
 
-	for (int i = 1; i <= height; i++)
+	for (int i = 0; i <= height + 1; i++)
 	{
-		for (int j = 1; j <= i * 2 + 1; j++)
+		for (int j = 0; j <= height * 2 + 2; j++)
 		{
-			if (j % 2 == 0)
+			if (i == 0 || i == height + 1 || j == 0 || j == height * 2 + 2)
 			{
-				printf("%i", i);
+				printf("*");
 			}
-			else
-			{
-				printf(" ");
+			else {
+				if (j % 2 == 0 && j < i * 2 + 1)
+				{
+					printf("%i", i);
+				}
+				else
+				{
+					printf(" ");
+				}
 			}
 		}
 		printf("\n");
